@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Tela de Cadastro</string>
+    <string name="text_cadaster">Trocar ou abrir conta</string>
+    <string name="return_home"></string>
+    <string name="enter">Entrar</string>
+    <string name="finish">Finalizar</string>
+    <string name="name_user">João Souza</string>
+    <string name="change_account">Trocar</string>
+
+
 </resources>
