@@ -6,6 +6,8 @@
     <string name="finish">Finalizar</string>
     <string name="name_user">João Souza</string>
     <string name="change_account">Trocar</string>
+    <string name="button_enter">ENTRAR</string>
+    <string name="logout">Sair / Logout</string>
 
 
 </resources>

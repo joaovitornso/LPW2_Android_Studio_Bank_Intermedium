@@ -1,4 +1,4 @@
-package com.example.teladecadastro;
+package com.example.teladecadastro.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,20 +7,20 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Cadastro extends AppCompatActivity {
-    private Button return_home;
+import com.example.teladecadastro.R;
 
-
+public class Login extends AppCompatActivity {
+    private Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadaster);
+        setContentView(R.layout.activity_my_account);
         retornarHome();
 
-        return_home.setOnClickListener(new View.OnClickListener(){
+        logout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(Cadastro.this, MainActivity.class);
+                Intent intent = new Intent(Login.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -28,6 +28,6 @@ public class Cadastro extends AppCompatActivity {
     }
 
     protected void retornarHome(){
-        return_home = findViewById(R.id.text_cadaster);
+        logout = findViewById(R.id.text_cadaster);
     }
 }
