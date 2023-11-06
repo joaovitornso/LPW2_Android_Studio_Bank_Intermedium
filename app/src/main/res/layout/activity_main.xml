@@ -15,7 +15,7 @@
         android:backgroundTint="#E0EAF4"
         android:ems="10"
         android:hint="Digite sua senha"
-        android:inputType="number"
+        android:inputType="textPassword"
         android:paddingLeft="15sp"
         android:paddingTop="15sp"
         android:paddingRight="15sp"
@@ -88,11 +88,11 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/text_cadaster"
+        android:id="@+id/text_cadaster1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:text="@string/text_cadaster"
+        android:text="Abrir nova conta"
         android:textColor="#FE8600"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

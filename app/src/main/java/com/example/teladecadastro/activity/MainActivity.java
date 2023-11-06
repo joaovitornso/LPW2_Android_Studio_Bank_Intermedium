@@ -2,6 +2,7 @@ package com.example.teladecadastro.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,16 +16,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.teladecadastro.R;
+import com.example.teladecadastro.dao.UserDAO;
 import com.example.teladecadastro.helper.DBContract;
 import com.example.teladecadastro.helper.DBHelper;
 
 import java.sql.DatabaseMetaData;
 
 public class MainActivity extends AppCompatActivity {
-    public TextView text_cadaster;
+    public Button text_cadaster;
     public Button button_enter;
 
-    public String edtEmail;
+    UserDAO uDao;
 
 
     @Override
@@ -33,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        text_cadaster = findViewById(R.id.text_cadaster);
+        text_cadaster = findViewById(R.id.text_cadaster1);
         text_cadaster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Cadastro.class);
-                startActivity(intent);
+                Intent it = new Intent(MainActivity.this, Cadastro.class);
+                startActivity(it);
 
             }
         });
@@ -52,7 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 String userEmail = ((EditText) findViewById(R.id.edtEmail)).getText().toString();
                 String userPassword = ((EditText) findViewById(R.id.edtPassword)).getText().toString();
 
-                if (verifyInformations(userEmail, userPassword)) {
+                SharedPreferences sp = getSharedPreferences("appBank", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("email", userEmail);
+                editor.apply();
+//                editor.commit();
+
+                if (uDao.verify_Email_and_Password()) {
                     Intent intent = new Intent(MainActivity.this, Login.class);
                     startActivity(intent);
                 } else {
