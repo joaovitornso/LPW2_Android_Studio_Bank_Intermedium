@@ -7,8 +7,7 @@ public class User {
     private String email;
     private String cpf;
 
-    public User(String num_account, String name, String password, String cpf, String email) {
-        this.num_account = num_account;
+    public User(String name, String password, String cpf, String email) {
         this.name = name;
         this.password = password;
         this.cpf = cpf;
